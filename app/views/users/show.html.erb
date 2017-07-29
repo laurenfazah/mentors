@@ -1,0 +1,12 @@
+<%= image_tag(@user.avatar.url(:small)) %>
+<%= @user.name %>
+<%= @user.email %>
+<%= @user.location.city %>
+<%= @user.location.state %>
+<%= @user.location.timezone %>
+<%= @user.profile.company.name %>
+<%= @user.profile.title %>
+<% @user.profile.skills.each do |skill| %>
+  <%= skill.name %>
+<% end %>
+<button type="password" name="password">Show Password</button>

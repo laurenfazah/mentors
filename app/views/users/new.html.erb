@@ -1,0 +1,49 @@
+
+<div class='form-style-4'><%= form_for(@user) do |f|  %>
+  <%= f.label :first_name, "First Name:" %>
+  <%= f.text_field :first_name, class: 'textarea' %>
+  <%= f.label :last_name, "Last Name:" %>
+  <%= f.text_field :last_name %>
+  <%= f.label :email, "Email (For Login):" %>
+  <%= f.text_field :email %>
+  <%= f.label :password, "Password:" %>
+  <%= f.text_field :password %>
+  <%= f.label :password_digest, "Password Confirmation:" %>
+  <%= f.text_field :password_digest %>
+  <%= f.fields_for :location do |ff| %>
+    <%= ff.label :city, "City:" %>
+    <%= ff.text_field :city %>
+    <%= ff.label :state, "State:" %>
+    <%= ff.text_field :state %>
+    <%= ff.label :timezone, "Timezone:" %>
+    <%= ff.time_zone_select :timezone %>
+  <% end %>
+  <%= f.fields_for :profile do |ff| %>
+    <%= ff.fields_for :company do |tt| %>
+      <%= tt.label :name, "Company:" %>
+      <%= tt.text_field :name %>
+    <% end %>
+    <%= ff.label :title, "Title:" %>
+    <%= ff.text_field :title %>
+    <%= f.label :skills, "Areas of Expertise:" %>
+    <% Skill.all.each do |skill| %>
+      <%= ff.label skill.name %>
+      <%= ff.check_box :skill_ids, {multiple:true},  skill.id, f.object.profile.skills.include?(skill) %>
+    <% end %>
+    <%#= ff.label :skills, "Ruby" %>
+    <%#= ff.check_box(:skills, {multiple: true}, "ruby", nil) %>
+    <%#= ff.label :skills, "HTML" %>
+    <%#= ff.check_box :skills %>
+    <%#= ff.label :skills, "JS" %>
+    <%#= ff.check_box :skills %>
+    <%#= ff.label :skills, "CSS" %>
+    <%#= ff.check_box :skills %>
+  <% end %>
+  <%#= f.text_field :skills %>
+  <%#= f.check_box :ruby %>
+  <%#= f.text_field :active %>
+  <%= f.label :active, "Accepting Mentees?" %>
+  <%= f.file_field :avatar %>
+  <%= f.label :avatar, "Upload a Photo:" %>
+  <%= f.submit "Sign Up" %>
+<% end %></div>
