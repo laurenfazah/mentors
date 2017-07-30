@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
   def show
-    @user = User.find(params[:id])
+    if current_user.nil?
+      redirect_to root_path
+    end
   end
 
   def new
@@ -9,9 +11,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    binding.pry
     generate_user
     if @user.save
+      session[:user_id] = @user.id
       redirect_to dashboard_path(@user)
     else
       render 'new'
