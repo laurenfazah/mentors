@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'redis', '~> 3.0'
 gem 'rails', '~> 5.1.2'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
@@ -16,6 +16,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'faraday'
 gem 'figaro'
 gem "paperclip", "~> 5.0.0"
+gem 'omniauth-oauth2'
+gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
+
 
 
 group :development, :test do

@@ -9,14 +9,14 @@
   <%= f.label :password, "Password:" %>
   <%= f.text_field :password %>
   <%= f.label :password_confirmation, "Password Confirmation:" %>
-  <%= f.text_field :password_digest %>
-  <%= f.fields_for :location do |ff| %>
-    <%= ff.label :city, "City:" %>
-    <%= ff.text_field :city %>
-    <%= ff.label :state, "State:" %>
-    <%= ff.text_field :state %>
-    <%= ff.label :timezone, "Timezone:" %>
-    <%= ff.time_zone_select :timezone %>
+  <%= f.text_field :password_confirmation %>
+  <%= f.fields_for :location do |ll| %>
+    <%= ll.label :city, "City:" %>
+    <%= ll.text_field :city %>
+    <%= ll.label :state, "State:" %>
+    <%= ll.text_field :state %>
+    <%= ll.label :timezone, "Timezone:" %>
+    <%= ll.time_zone_select :timezone %>
   <% end %>
   <%= f.fields_for :profile do |ff| %>
     <%= ff.fields_for :company do |tt| %>
@@ -25,24 +25,14 @@
     <% end %>
     <%= ff.label :title, "Title:" %>
     <%= ff.text_field :title %>
-    <%= f.label :skills, "Areas of Expertise:" %>
+  <%= f.label :skills, "Areas of Expertise:" %>
     <% Skill.all.each do |skill| %>
       <%= ff.label skill.name %>
       <%= ff.check_box :skill_ids, {multiple:true},  skill.id, f.object.profile.skills.include?(skill) %>
     <% end %>
-    <%#= ff.label :skills, "Ruby" %>
-    <%#= ff.check_box(:skills, {multiple: true}, "ruby", nil) %>
-    <%#= ff.label :skills, "HTML" %>
-    <%#= ff.check_box :skills %>
-    <%#= ff.label :skills, "JS" %>
-    <%#= ff.check_box :skills %>
-    <%#= ff.label :skills, "CSS" %>
-    <%#= ff.check_box :skills %>
   <% end %>
-  <%#= f.text_field :skills %>
-  <%#= f.check_box :ruby %>
-  <%#= f.text_field :active %>
-  <%= f.label :active, "Accepting Mentees?" %>
+  <%= f.label :accepting_mentees, "Accepting Mentees?" %>
+  <%= f.check_box :accepting_mentees %>
   <%= f.file_field :avatar %>
   <%= f.label :avatar, "Upload a Photo:" %>
   <%= f.submit "Sign Up" %>

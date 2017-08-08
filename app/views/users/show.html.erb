@@ -1,16 +1,17 @@
 <ul class='form-style-4'>
-
-  <%= image_tag(current_user.avatar.url(:small)) %>
+  <%= image_tag (current_user.avatar.url(:small)) %>
   <li><%= current_user.name %></li>
   <li><%= current_user.email %></li>
-  <li><%= current_user.location.city %></li>
-  <li><%= current_user.location.state %></li>
-  <li><%= current_user.location.timezone %></li>
-  <li><%= current_user.profile.company.name %></li>
-  <li><%= current_user.profile.title %></li>
-  <% current_user.profile.skills.each do |skill| %>
+<% if current_user.role == "mentor" %>
+  <li><%= current_user.city %></li>
+  <li><%= current_user.state %></li>
+  <li><%= current_user.timezone %></li>
+  <li><%= current_user.company %></li>
+  <li><%= current_user.title %></li>
+  <% current_user.skills.each do |skill| %>
     <li><%= skill.name %></li>
   <% end %>
+  <li><input type="checkbox" name="accepting_mentees" value="Accepting Mentees?">Accepting Mentees?</li>
+  <% end %>
   <button type="password" name="password">Show Password</button>
-  <%= link_to "Log Out", logout_path, method: :delete %>
 </ul>

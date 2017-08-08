@@ -1,0 +1,19 @@
+<% @mentors.each do |mentor| %>
+  <ul>
+    <%= image_tag (mentor.avatar.url(:small)) %>
+    <li><%= mentor.name %></li>
+    <li><%= mentor.location.city %></li>
+    <li><%= mentor.location.state %></li>
+    <li><%= mentor.location.timezone %></li>
+    <% mentor.profile.skills.each do |skill| %>
+      <li><%= skill.name %></li>
+    <% end %>
+    <% if mentor.accepting_mentees? %>
+      <li>Accepting Mentees!</li>
+    <% else %>
+      <li>Not Accepting Mentees</li>
+    <% end %>
+    <%= button_to "View My Profile", mentor_path(mentor), method: :get %>
+    <%= button_to  "Message Me!" %>
+</ul>
+<% end %>
