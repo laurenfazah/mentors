@@ -15,11 +15,18 @@
         <div class="logo">
           <%= image_tag 'TuringSchool_LogoHorizontal_k.png' %>
         </div>
-  			<ul>
-          <li><%= link_to "I want to be a mentor!", new_user_path %></li>
-          <li><%= link_to "I am already a mentor!", login_path %></li>
-          <li><%= link_to "I am a student looking for a mentor!", '/auth/census' %></li>
-  			</ul>
+        <ul>
+          <%= link_to new_user_path do %>
+            <li>I want to be a mentor!</li>
+          <% end %>
+
+          <%= link_to login_path do %>
+            <li>I am already a mentor!</li>
+          <% end %>
+
+          <%= link_to '/auth/census' do %>
+            <li>I am a student looking for a mentor!</li>
+          <% end %>
       </div>
 		</nav>
 
