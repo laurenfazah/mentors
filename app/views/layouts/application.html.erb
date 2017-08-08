@@ -8,17 +8,32 @@
     <%= javascript_include_tag 'application' %>
 
   </head>
-  <nav>
-    <%= flash[:notice].html_safe unless flash[:notice].blank? %>
-    <% if current_user != nil && current_user.role == "student" %>
-      <%= link_to "Mentors", mentors_path %>
-    <% end %>
-    <% if current_user %>
-      <%= link_to "Log Out", logout_path, method: :delete %>
-    <% end %>
-  </nav>
+
+	<div class="container">
+		<nav class="sidebar-container">
+      <div class="sidebar">
+        <div class="logo">
+          <%= image_tag 'TuringSchool_LogoHorizontal_k.png' %>
+        </div>
+  			<ul>
+          <li><%= link_to "I want to be a mentor!", new_user_path %></li>
+          <li><%= link_to "I am already a mentor!", login_path %></li>
+          <li><%= link_to "I am a student looking for a mentor!", '/auth/census' %></li>
+  			</ul>
+      </div>
+		</nav>
+
+	</div>
+  <%= flash[:notice].html_safe unless flash[:notice].blank? %>
+  <% if current_user != nil && current_user.role == "student" %>
+    <%= link_to "Mentors", mentors_path %>
+  <% end %>
+  <% if current_user %>
+    <%= link_to "Log Out", logout_path, method: :delete %>
+  <% end %>
   <body>
     <%= yield %>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
+
 </html>
