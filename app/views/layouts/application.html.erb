@@ -6,11 +6,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
   <nav>
     <%= flash[:notice].html_safe unless flash[:notice].blank? %>
+    <% if current_user != nil && current_user.role == "student" %>
+      <%= link_to "Mentors", mentors_path %>
+    <% end %>
+    <% if current_user %>
+      <%= link_to "Log Out", logout_path, method: :delete %>
+    <% end %>
   </nav>
   <body>
     <%= yield %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 </html>

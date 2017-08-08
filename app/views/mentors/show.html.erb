@@ -1,0 +1,11 @@
+<ul>
+  <li><%= image_tag(@mentor.avatar.url(:small)) %>
+  <li><%= @mentor.name %></li>
+  <li><%= @mentor.company %></li>
+  <li><%= @mentor.city %></li>
+  <li><%= @mentor.state %></li>
+  <li><%= @mentor.bio %></li>
+  <% @mentor.skills.each do |skill| %>
+    <li><%= skill.name %></li>
+  <% end %>
+</ul>

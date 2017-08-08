@@ -40,13 +40,14 @@ feature "guest becomes mentor" do
     fill_in "Company:", with: "Turing"
     fill_in "Title:", with: "Assistant Instructor"
     check("user_profile_attributes_skill_ids_1")
+    attach_file("Upload a Photo:", File.absolute_path("#{Rails.root}/spec/support/images/etaliasnemo.png"))
+
     # fill_in "Accepting Mentees?", with:
     # fill_in "Upcload a Photo:", with:
 
     click_on "Sign Up"
 
-    visit dashboard_path(User.last)
-
+    expect(current_path).to eq(dashboard_path(User.last))
     expect(page).to have_content("Ilana Corson")
     expect(page).to have_content("Turing")
     expect(page).to have_content("Denver")

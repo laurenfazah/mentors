@@ -6,7 +6,6 @@ FactoryGirl.define do
     timezone Faker::Address.time_zone
   end
 
-
   factory :user do
     first_name Faker::Name.first_name
     last_name Faker::Name.last_name
@@ -16,4 +15,6 @@ FactoryGirl.define do
     profile
     location
   end
+
+
 end
