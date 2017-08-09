@@ -1,0 +1,22 @@
+<div class="container-left">
+  <nav class="sidebar-container">
+    <div class="sidebar">
+      <div class="logo">
+        <%= image_tag 'TuringSchool_LogoHorizontal_k.png' %>
+      </div>
+      <ul>
+        <%= link_to new_user_path do %>
+          <li class="nav-item">I want to be a mentor!</li>
+        <% end %>
+
+        <%= link_to login_path do %>
+          <li class="nav-item">I am already a mentor!</li>
+        <% end %>
+
+        <%= link_to '/auth/census' do %>
+          <li class="nav-item">I am a student looking for a mentor!</li>
+        <% end %>
+    </div>
+  </nav>
+
+</div>

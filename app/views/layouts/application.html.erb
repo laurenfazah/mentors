@@ -9,28 +9,8 @@
 
   </head>
 
-	<div class="container">
-		<nav class="sidebar-container">
-      <div class="sidebar">
-        <div class="logo">
-          <%= image_tag 'TuringSchool_LogoHorizontal_k.png' %>
-        </div>
-        <ul>
-          <%= link_to new_user_path do %>
-            <li>I want to be a mentor!</li>
-          <% end %>
 
-          <%= link_to login_path do %>
-            <li>I am already a mentor!</li>
-          <% end %>
 
-          <%= link_to '/auth/census' do %>
-            <li>I am a student looking for a mentor!</li>
-          <% end %>
-      </div>
-		</nav>
-
-	</div>
   <%= flash[:notice].html_safe unless flash[:notice].blank? %>
   <% if current_user != nil && current_user.role == "student" %>
     <%= link_to "Mentors", mentors_path %>
@@ -39,7 +19,14 @@
     <%= link_to "Log Out", logout_path, method: :delete %>
   <% end %>
   <body>
-    <%= yield %>
+
+    <div class="wrapper">
+      <%= render 'layouts/navigation' %>
+      <div class="container-main">
+        <%= yield %>
+      </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   </body>
 

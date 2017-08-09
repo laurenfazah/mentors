@@ -1,5 +1,26 @@
 html, body {
   margin: 0;
   padding: 0;
+  background-color: #f5f5f5;
   font-family: "azo-sans-web","Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.wrapper {
+  display: flex;
+
+  .container-left {
+    width: 25%;
+    max-width: 300px;
+    min-width: 200px;
+    background: #00bbd2;
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+  }
+
+  .container-main {
+     width: 75%;
+  }
+
+
 }
