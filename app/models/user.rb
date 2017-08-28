@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_secure_password
   default_scope { order(id: :asc) }
+  scope :accepting_mentees, -> (accepting_mentees) { where accepting_mentees: true }
 
   has_attached_file :avatar, styles: { small: "200x200", medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png",
                             :url  => "/assets/products/:id/:style/:basename.:extension",
@@ -52,7 +53,7 @@ class User < ApplicationRecord
   end
 
   private
-  
+
   def self.create_oauth_user(raw_info_from_oauth)
     user = User.find_or_create_by(uid: raw_info_from_oauth[:id])
     user.email = raw_info_from_oauth[:email]

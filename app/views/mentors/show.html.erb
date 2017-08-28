@@ -8,4 +8,6 @@
   <% @mentor.skills.each do |skill| %>
     <li><%= skill.name %></li>
   <% end %>
+    <%= button_to "Email Me", new_mentor_notification_path(@mentor), method: :get %>
+    <%#= button_to "Email Me", notification_path(@mentor) %>
 </ul>

@@ -35,7 +35,6 @@ class UsersController < ApplicationController
                                   profile_attributes: [ [skill_ids: []], :title, [company_attributes: [:name]]])
   end
 
-
   def generate_user
     User.transaction do
       @user          = User.new(user_params)
@@ -52,7 +51,7 @@ class UsersController < ApplicationController
   def profile_something
     {company: Company.find_or_create_by!(format!(profile_params[:company_attributes])),
     title: profile_params[:title],
-    skills: Skill.where(id: profile_params[:skill_ids])}
+    skills: Skill.all_except(profile_params[:skill_ids])}
   end
 
 end

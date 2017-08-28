@@ -1,0 +1,5 @@
+<%= form_tag mentor_notifications_path(@mentor) do  %>
+  <%= text_field_tag :subject, "Looking for a Mentor, are you able to help?" %>
+  <%= text_area_tag :message %>
+  <%= submit_tag "Send Email" %>
+<% end %>

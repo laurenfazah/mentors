@@ -13,7 +13,7 @@
   <%= f.fields_for :location do |ll| %>
     <%= ll.label :city, "City:" %>
     <%= ll.text_field :city %>
-    <%= ll.label :state, "State:" %>
+    <%= ll.label :state, "State:", pattern: "[A-Z]{2}" %>
     <%= ll.text_field :state %>
     <%= ll.label :timezone, "Timezone:" %>
     <%= ll.time_zone_select :timezone %>

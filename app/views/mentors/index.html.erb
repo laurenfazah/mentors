@@ -1,3 +1,6 @@
+<%#=  collection_select(:user, :user_id, User.accepting_mentees(true), :id,  prompt: "true")%>
+
+
 <% @mentors.each do |mentor| %>
   <ul>
     <%= image_tag (mentor.avatar.url(:small)) %>
