@@ -1,18 +1,18 @@
 <div class="sign-in">
-	<p>Please enter your email and password below to continue.</p>
-	<%= form_for(:session, url: login_path) do |f| %>
-		<div class="sign-in-inputs">
-			<div class="input-email">
-				<%= f.label :email, "Email:" %>
-				<%= f.text_field :email %>
-			</div>
-			<div class="input-password">
-				<%= f.label :password, "Password:" %>
-				<%= f.text_field :password %>
-			</div>
-			<div class="sign-in-submit">
-				<%= f.submit "Log In" %>
-			</div>
-		</div>
-	<% end %>
+  <p>Please enter your email and password below to continue.</p>
+  <%= form_for(:session, url: login_path) do |f| %>
+    <div class="sign-in-inputs">
+      <div class="input-email">
+        <%= f.label :email, "Email:" %>
+        <%= f.text_field :email %>
+      </div>
+      <div class="input-password">
+        <%= f.label :password, "Password:" %>
+        <%= f.text_field :password %>
+      </div>
+      <div class="sign-in-submit">
+        <%= f.submit "Log In" %>
+      </div>
+    </div>
+  <% end %>
 </div>

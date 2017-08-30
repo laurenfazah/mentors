@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default">
-	<div class="navbar-brand">
-  	<%= link_to image_tag("turing.png", { class: "navbar-logo" }), root_path %>
+  <div class="navbar-brand">
+    <%= link_to image_tag("turing.png", { class: "navbar-logo" }), root_path %>
   </div>
 
   <%= flash[:notice].html_safe unless flash[:notice].blank? %>
