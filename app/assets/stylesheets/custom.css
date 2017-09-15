@@ -1,12 +1,12 @@
-body {
+/*body {
   background: url('cover.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-}
+}*/
 
-.welcome-article {
+/*.welcome-article {
   margin: auto;
   margin-top: 15%;
   width: 400px;
@@ -27,4 +27,4 @@ body {
   height: auto;
 }
  /*flex: 2;*/
-}
+}*/

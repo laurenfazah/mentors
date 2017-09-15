@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+@import "partials/reset";
+@import "partials/base";
+
+@import "globals/logo";
+
+@import "sections/welcome";
