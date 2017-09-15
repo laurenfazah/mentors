@@ -1,5 +1,5 @@
 
-<div class='form-style-4'><%= form_for(@user) do |f|  %>
+<%= form_for(@user) do |f|  %>
   <%= f.label :first_name, "First Name:" %>
   <%= f.text_field :first_name, class: 'textarea' %>
   <%= f.label :last_name, "Last Name:" %>
@@ -26,14 +26,18 @@
     <%= ff.label :title, "Title:" %>
     <%= ff.text_field :title %>
   <%= f.label :skills, "Areas of Expertise:" %>
-    <% Skill.all.each do |skill| %>
-      <%= ff.label skill.name %>
-      <%= ff.check_box :skill_ids, {multiple:true},  skill.id, f.object.profile.skills.include?(skill) %>
-    <% end %>
+    <div class="checkboxes">
+      <% Skill.all.each do |skill| %>
+        <div class="box-label">
+          <%= ff.label skill.name %>
+          <%= ff.check_box :skill_ids, {multiple:true},  skill.id, f.object.profile.skills.include?(skill) %>
+        </div>
+      <% end %>
+    </div>
   <% end %>
   <%= f.label :accepting_mentees, "Accepting Mentees?" %>
   <%= f.check_box :accepting_mentees %>
-  <%= f.file_field :avatar %>
   <%= f.label :avatar, "Upload a Photo:" %>
+  <%= f.file_field :avatar %>
   <%= f.submit "Sign Up" %>
-<% end %></div>
+<% end %>

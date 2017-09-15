@@ -1,9 +1,11 @@
 /*//////////////////////////////////////
 //  fonts
 //////////////////////////////////////*/
-$font-sans: Helvetica;
-$font-serif: 'Crimson Sans';
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$font-sans: "Open Sans", Helvetica;
+$font-serif: 'Crimson Sans';
 
 h1,h2,h3,h4,h5,h6{
     font-weight:200;
@@ -169,7 +171,7 @@ body,html{
     height:100%;
 }
 
-body{
+body,form{
     font-size:62.5%;
     position:relative;
     font-family:$font-sans;

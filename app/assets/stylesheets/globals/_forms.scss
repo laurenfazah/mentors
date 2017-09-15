@@ -1,0 +1,57 @@
+form {
+  margin: 50px auto;
+  min-width: 350px;
+  width: 50%;
+  input, label, textarea {
+    display: block;
+  }
+  input {
+    height: 45px;
+    padding-left: 10px;
+    width: 100%;
+    &[type="submit"] {
+      @extend %default-transition;
+      background-color: $turing-blue;
+      border: 1px $turing-blue solid;
+      color: $light;
+      font-size: 2.5em;
+      height: 50px;
+      margin: 50px auto;
+      width: 80%;
+      &:hover {
+        background-color: $light;
+        color: $turing-blue;
+      }
+    }
+  }
+  label {
+    color: $turing-dark-gray;
+    font-size: 3em;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    line-height: 1.5;
+    text-decoration: underline;
+    text-decoration-color: $turing-accent-blue;
+  }
+  .checkboxes {
+    overflow: hidden;
+    width: 100%;
+    .box-label {
+      float: left;
+      overflow: hidden;
+      width: 33%;
+      input[type="checkbox"] {
+        float: left;
+        width: inherit;
+      }
+      label {
+        float: left;
+        font-size: 2.5em;
+        margin-right: 10px;
+        padding-bottom: 5px;
+        padding-top: 16px;
+        text-decoration: none;
+      }
+    }
+  }
+}
