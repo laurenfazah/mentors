@@ -1,26 +1,9 @@
 /*//////////////////////////////////////
-//  colors
-//////////////////////////////////////*/
-
-$facebook: #3c5290;
-$twitter:#469aea;
-$instagram: #1b3f67;
-$linkedin: #3574af;
-
-$light:#fff;
-$dark: #231f20;
-$primary: #93A884;
-$accent: #cbc8c7;
-
-$gold: #a08958;
-$red: #800000;
-$blue: #008080;
-
-/*//////////////////////////////////////
 //  fonts
 //////////////////////////////////////*/
 $font-sans: Helvetica;
 $font-serif: 'Crimson Sans';
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 h1,h2,h3,h4,h5,h6{
     font-weight:200;
@@ -67,10 +50,10 @@ h3{
 
 *{
     &::selection {
-        background: $primary;
+        background: $turing-accent-blue;
     }
     &::-moz-selection {
-        background: $primary;
+        background: $turing-accent-blue;
     }
 }
 
@@ -154,12 +137,19 @@ button,input[type="submit"]{
 }
 
 %middle{
-    position: relative, 50% auto auto auto;
+    position: relative;
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: auto;
     transform: translateY(-50%);
 }
 
 %absolute-middle{
-    position: absolute, 50% auto auto 50%;
+    position: absolute;
+    top: 50%;
+    right: auto;
+    bottom: 50%;
     transform: translateY(-50%) translateX(-50%);
 }
 

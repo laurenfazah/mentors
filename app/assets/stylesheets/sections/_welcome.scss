@@ -1,4 +1,27 @@
 .welcome {
-  height: 100vh;
-  background-color: rgba(lighten(black, 90%), .3);
+  .cta {
+    @extend %default-transition;
+    align-items: center;
+    border-bottom: 1px $turing-lighter-accent solid;
+    display: flex;
+    flex-direction: row;
+    height: 150px;
+    &:hover {
+      background-color: $turing-lighter-accent;
+      i {
+        margin-left: 30px;
+        font-size: 3.5em;
+      }
+    }
+    p {
+      @extend %default-transition;
+      color: $turing-dark-gray;
+      font-size: 2em;
+      padding-left: 150px;
+    }
+  }
+  i {
+    @extend %default-transition;
+    margin-left: 10px;
+  }
 }

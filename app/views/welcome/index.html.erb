@@ -1,6 +1,14 @@
 <article class="welcome">
-  <img id="white-turing-logo" src="./assets/white_turing_log.png" alt="Turing logo">
-  <%= link_to "I want to be a mentor!", new_user_path %><br/>
-  <%= link_to "I am already a mentor!", login_path %><br/>
-  <%= link_to "I am a student looking for a mentor!", '/auth/census' %><br/>
+  <%= link_to new_user_path, class: "cta" do %>
+    <p>I am already a mentor</p>
+    <i class="material-icons">arrow_forward</i>
+  <% end %>
+  <%= link_to login_path, class: "cta" do %>
+    <p>I am already a mentor</p>
+    <i class="material-icons">arrow_forward</i>
+  <% end %>
+  <%= link_to '/auth/census', class: "cta" do %>
+    <p>I am a student looking for a mentor</p>
+    <i class="material-icons">arrow_forward</i>
+  <% end %>
 </article>

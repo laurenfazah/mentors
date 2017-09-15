@@ -1,9 +1,12 @@
 <article class="nav-bar">
+  <%= link_to "", root_path, class: "logo" %>
   <%= flash[:notice].html_safe unless flash[:notice].blank? %>
   <% if current_user != nil && current_user.role == "student" %>
-    <%= link_to "Mentors", mentors_path %>
+    <%= link_to "Mentors", mentors_path, class: "mentors" %>
   <% end %>
   <% if current_user %>
-    <%= link_to "Log Out", logout_path, method: :delete %>
+    <%= link_to "Log Out", logout_path, method: :delete, class: "log out" %>
+  <% else %>
+    <%= link_to "Log In", login_path, class: "log in" %>
   <% end %>
 </article>

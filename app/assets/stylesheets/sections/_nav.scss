@@ -1,0 +1,40 @@
+.nav-bar {
+  background-color: $turing-blue;
+  height: 100px;
+  padding: 10px;
+  position: relative;
+  a {
+    @extend %default-transition;
+    color: $light;
+    display: block;
+    height: 80px;
+    font-size: 2em;
+    min-width: 200px;
+    text-align: center;
+    width: 15%;
+    &:hover {
+      color: $turing-light-gray;
+      opacity: .7;
+    }
+    &.mentors {
+
+    }
+    &.log {
+      float: right;
+      line-height: 80px;
+      &.in {
+
+      }
+      &.out {
+
+      }
+    }
+  }
+  .logo {
+    position: absolute;
+    background-image: image-url('white_turing_log.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+}

@@ -10,13 +10,15 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
 @import "partials/reset";
+@import "partials/colors";
 @import "partials/base";
 
+@import "globals/material-icons";
 @import "globals/logo";
 
+@import "sections/skeleton";
+@import "sections/nav";
 @import "sections/welcome";
